@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=bimp'
+      - 'POSTGRES_PASSWORD=local'
+      - 'POSTGRES_USER=app_local'
+    ports:
+      - '15432:5432'
+    volumes:
+      - bimp_postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bimp-test-backend
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    command: npm run dev
+
+volumes:
+  bimp_postgres_data:
+

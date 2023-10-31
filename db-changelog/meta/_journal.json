@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1698737021431,
+      "tag": "0000_nappy_slayback",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1698747792201,
+      "tag": "0001_heavy_thena",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1698755007003,
+      "tag": "0002_freezing_morg",
+      "breakpoints": true
+    }
+  ]
+}
