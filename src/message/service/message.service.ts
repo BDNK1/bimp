@@ -76,9 +76,11 @@ async function saveUploadedFile(file: MultipartFile): Promise<string> {
     const filename = `${Date.now()}-${file.filename}`;
     const directory = path.join(process.env.FILE_STORAGE_PATH!);
 
-    await fs.promises.mkdir(directory);
-
+    if (!fs.existsSync(directory)) {
+        await fs.promises.mkdir(directory);
+    }
     const targetPath = path.join(directory, filename);
+
     fs.writeFileSync(targetPath, await file.toBuffer())
     console.log(`File saved at: ${targetPath}`);
     return targetPath;

@@ -5,10 +5,11 @@ import {ApiError} from "../../common/error/api.error";
 
 export async function createAccount(account: Account): Promise<Account> {
     account.password = await hash(account.password);
-    return create(account).catch((error: any) => {
-        console.log("Error when creating account", error);
-        throw new ApiError('Failed to create user');
-    });
+    return create(account)
+        .catch((error: any) => {
+            console.log("Error when creating account", error);
+            throw new ApiError('Failed to create user');
+        });
 }
 
 export async function authenticate(email: string, password: string): Promise<Account> {

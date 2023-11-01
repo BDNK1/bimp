@@ -7,6 +7,6 @@ export function setupExceptionHandler(app: FastifyInstance) {
         if (error instanceof ApiError) {
             reply.status(500).send({error: true, message: error.message})
         }
-        reply.status(500).send({error: true, message: 'Something went wrong'}) // this is the response sent to the client
+        reply.status(500).send({error: true, message: 'Something went wrong'})
     })
 }

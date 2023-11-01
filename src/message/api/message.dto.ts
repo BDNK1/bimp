@@ -33,7 +33,6 @@ const PagedMessageResponse = z.object({
 export type CreateTextMessageBody = z.infer<typeof createTextMessageRequest>;
 export type MessageDto = z.infer<typeof MessageDto>;
 export type PaginationQuery = z.infer<typeof PaginationQuery>;
-export type PaginationDto = z.infer<typeof PaginationDto>;
 export type PagedMessageResponse = z.infer<typeof PagedMessageResponse>;
 
 export const createTextMessageJsonSchema = {
